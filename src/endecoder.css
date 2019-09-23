@@ -1,0 +1,254 @@
+html {
+  height: 100%;
+  font-size: 16px;
+}
+
+body {
+  height: 100%;
+  font-family: arial;
+  margin: 0;
+}
+
+div.interface {
+  --color-main: #036;
+  --color-light: hsl(210, 50%, 80%);
+  height: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.interface > header {
+  -webkit-box-ordinal-group: -999;
+      -ms-flex-order: -1000;
+          order: -1000;
+}
+
+div.interface > footer {
+  -webkit-box-ordinal-group: 1001;
+      -ms-flex-order: 1000;
+          order: 1000;
+}
+
+div.interface > .body {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: auto auto 1fr;
+      grid-template-rows: auto auto 1fr;
+  -ms-grid-columns: 1fr 300px;
+      grid-template-columns: 1fr 300px;
+  grid-gap: 1em;
+  padding: 1em;
+}
+
+div.interface > header,
+div.interface > footer {
+  background-color: var(--color-light);
+  color: var(--color-main);
+  padding: 1em;
+}
+
+div.interface > header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.interface > header h1 {
+  margin: 0;
+  line-height: 0;
+  font-size: 3em;
+}
+
+div.interface > header img {
+  margin-right: 1em;
+}
+
+.options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #eee;
+  padding: 0.25em;
+}
+
+.flex-center, .reverse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+.reverse {
+  width: 24px;
+  height: 24px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: .25em;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32"><path d="m 8,29 c 0,1.65685 1.3431498,3 3,3 1.65685,0 3,-1.34315 3,-3 V 3 C 14,1.3431498 12.656857,-2.416048e-5 11,0 10.232238,1.1194859e-5 9.4646947,0.29311778 8.8789062,0.87890625 L 0.87890625,8.8789062 c -1.17156987,1.1715698 -1.17156987,3.0706178 0,4.2421878 1.17156985,1.17157 3.07061755,1.17157 4.24218755,0 L 8,10.242188 Z M 24,3 C 24,1.34315 22.65685,0 21,0 19.34315,0 18,1.34315 18,3 v 26 c 0,1.65685 1.34315,3.00003 3,3 0.76777,-10e-6 1.53531,-0.29312 2.1211,-0.8789 l 8,-8 c 1.17157,-1.17157 1.17157,-3.07062 0,-4.24219 -1.17157,-1.17157 -3.07062,-1.17157 -4.24219,0 L 24,21.75781 Z"/></svg>');
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+div.instructions {
+  font-size: smaller;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  grid-area: 1 / 2 / span 4 / auto;
+}
+
+div.instructions ul {
+  margin: 0;
+  padding: 0;
+  padding-left: 1.5em;
+}
+
+div.instructions h2 {
+  margin-bottom: 0;
+  font-size: 1.2em;
+}
+
+.input {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 0 .5em;
+}
+
+.input #tab-t:not(:checked) ~ #field-t > :first-child ~ *,
+.input #tab-f:not(:checked) ~ #field-f > :first-child ~ *,
+.input #tab-u:not(:checked) ~ #field-u > :first-child ~ * {
+  display: none;
+}
+
+.input .field {
+  display: contents;
+}
+
+.input input[type=radio] {
+  display: none;
+}
+
+.input label {
+  -ms-grid-row: 1;
+  grid-row: 1;
+  border: 1px solid black;
+  padding: .25em .5em 0;
+  font-size: smaller;
+  border-bottom: none;
+  border-radius: .5em .5em 0 0;
+}
+
+.input #tab-t:checked ~ #field-t > label,
+.input #tab-f:checked ~ #field-f > label,
+.input #tab-u:checked ~ #field-u > label {
+  background-color: #036;
+  color: white;
+}
+
+.input .field > :first-child ~ * {
+  grid-column: span 3;
+}
+
+.output {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.output > * {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
+table.modes {
+  border-collapse: collapse;
+  width: 100%;
+  border: 2px solid black;
+}
+
+table.modes caption {
+  font-weight: bold;
+  font-size: larger;
+}
+
+table.modes thead {
+  background-color: black;
+  color: white;
+}
+
+table.modes tbody th, table.modes tbody td {
+  padding: .15em;
+}
+
+table.modes tbody th {
+  text-align: left;
+  font-weight: normal;
+}
+
+table.modes tbody td {
+  text-align: center;
+  font-weight: bold;
+}
+
+div.field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+div.field#field-m {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.field > label {
+  font-weight: bold;
+}
+
+div.field > textarea {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  resize: none;
+}
+/*# sourceMappingURL=endecoder.css.map */

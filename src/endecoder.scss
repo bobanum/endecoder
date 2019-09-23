@@ -29,7 +29,7 @@ div.interface {
 	& > .body {
 		flex: 1 0 0;
 		display: grid;
-		grid-template-rows: 1fr auto 1fr auto;
+		grid-template-rows: auto auto 1fr ;
 		grid-template-columns: 1fr 300px;
 		grid-gap: 1em;
 		padding: 1em;
@@ -60,17 +60,36 @@ div.interface {
 	}
 }
 
+.options {
+	display: flex;
+	justify-content: space-between;
+	background-color: #eee;
+	padding: 0.25em;
+
+}
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
 .reverse {
-	display: inline-block;
-	width: 16px;
-	height: 16px;
-	vertical-align: middle;
+	@extend .flex-center;
+	width: 24px;
+	height: 24px;
+	box-sizing: border-box;
+	border: none;
+	background-color: rgba(0,0,0,.2);
+	border-radius: .25em;
 	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 32 32"><path d="m 8,29 c 0,1.65685 1.3431498,3 3,3 1.65685,0 3,-1.34315 3,-3 V 3 C 14,1.3431498 12.656857,-2.416048e-5 11,0 10.232238,1.1194859e-5 9.4646947,0.29311778 8.8789062,0.87890625 L 0.87890625,8.8789062 c -1.17156987,1.1715698 -1.17156987,3.0706178 0,4.2421878 1.17156985,1.17157 3.07061755,1.17157 4.24218755,0 L 8,10.242188 Z M 24,3 C 24,1.34315 22.65685,0 21,0 19.34315,0 18,1.34315 18,3 v 26 c 0,1.65685 1.34315,3.00003 3,3 0.76777,-10e-6 1.53531,-0.29312 2.1211,-0.8789 l 8,-8 c 1.17157,-1.17157 1.17157,-3.07062 0,-4.24219 -1.17157,-1.17157 -3.07062,-1.17157 -4.24219,0 L 24,21.75781 Z"/></svg>');
+	background-size: 80%;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 div.instructions {
 	font-size: smaller;
-	grid-area: 1 e("/") 2 e("/") span 4 e("/") auto;
+	grid-area: 1 / 2 / span 4 / auto;
 	ul {
 		margin: 0;
 		padding: 0;
@@ -79,6 +98,46 @@ div.instructions {
 	h2 {
 		margin-bottom: 0;
 		font-size: 1.2em;
+	}
+}
+.input	{
+	display: grid;
+	grid-gap: 0 .5em;
+	#tab-t:not(:checked) ~ #field-t > :first-child ~ *,
+	#tab-f:not(:checked) ~ #field-f > :first-child ~ *,
+	#tab-u:not(:checked) ~ #field-u > :first-child ~ * {
+		display:none;
+	}
+	.field {
+		display: contents;
+	}
+	input[type=radio] {
+		display: none;
+	}
+	label {
+		grid-row: 1;
+		border: 1px solid black;
+		padding: .25em .5em 0;
+		font-size: smaller;
+		border-bottom: none;
+		border-radius: .5em .5em 0 0;
+	}
+	#tab-t:checked ~ #field-t > label,
+	#tab-f:checked ~ #field-f > label,
+	#tab-u:checked ~ #field-u > label {
+		background-color: #036;
+		color:white;
+	}
+
+	.field > :first-child ~ * {
+		grid-column: span 3;
+	}
+}
+.output {
+	display: flex;
+	flex-direction: column;
+	& > * {
+		flex: 1 0 auto;
 	}
 }
 table.modes {
@@ -123,7 +182,4 @@ div.field {
 		flex: 1 0 0;
 		resize: none;
 	}
-}
-
-form {
 }

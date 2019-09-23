@@ -23,12 +23,12 @@ class Endecoder {
 		}
 	}
 	public function __toString() {
-		return $this->traiter();
+		return $this->process();
 	}
 	public function get_final() {
-		return $this->traiter();
+		return $this->process();
 	}
-	static public function traiterChaine($string, $modes) {
+	static public function processString($string, $modes) {
 		$modes = str_split($modes);
 		foreach ($modes as $mode) {
 			$string = self::applyMode($string, $mode);
@@ -55,13 +55,13 @@ class Endecoder {
 			default: return $string;
 		}
 	}
-	public function traiter($modes=null) {
+	public function process($modes=null) {
 		$r = $this->original;
 		if (is_null($modes)) {
 			$modes = $this->modes;
 		} else {
 			$this->modes = $modes;
 		}
-		return static::traiterChaine($r, $modes);
+		return static::processString($r, $modes);
 	}
 }

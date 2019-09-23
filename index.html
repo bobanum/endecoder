@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<title>Endecoder</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" href="./src/endecoder.css" />
+	<script type="module">
+		import App from "./src/App.js";
+	</script>
+</head>
+
+<body>
+	<div class="interface">
+		<header>
+			<img src="images/favicon.svg" width="64" alt=""><h1>Endecoder</h1>
+		</header>
+		<footer>&copy; 2018</footer>
+		<div class="body">
+			<div class="instructions">
+				<p>Permet d'encoder et de décoder une chaîne de caractères.</p>
+				<table class="modes" border="1">
+					<caption>Modes</caption>
+					<thead>
+						<tr>
+							<th>E</th>
+							<th>D</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr><td>B</td><td>b</td><th>base64</th></tr>
+						<tr><td>G</td><td>g</td><th>compression gzlib</th></tr>
+						<tr><td>U</td><td>u</td><th>url</th></tr>
+						<tr><td>W</td><td>w</td><th>uu</th></tr>
+						<tr><td>X</td><td>x</td><th>hexadecimal</th></tr>
+						<tr><td>C</td><td>c</td><th>majuscules</th></tr>
+						<tr><td>F</td><td>f</td><th>utf-8</th></tr>
+						<tr><td>5</td><td></td><th>md5</th></tr>
+					</tbody>
+				</table>
+				<h2>API</h2>
+				<p>Accepte la méthode get ou post.</p>
+				<p>Les données attendues sont : "m" pour les modes, "t" pour le texte à transformer.</p>
+				<p>Si la donnée "t" ou "m" n'est pas présente, le résultat est vide.</p>
+			</div>
+			<div class="input">
+				<input type="radio" name="tab" id="tab-t" checked="checked"/>
+				<input type="radio" name="tab" id="tab-f"/>
+				<input type="radio" name="tab" id="tab-u"/>
+				<div class="field" id="field-t">
+					<label for="tab-t">Texte</label>
+					<textarea form="form1" name="t" cols="30" rows="5" id="t" placeholder="Texte"></textarea>
+				</div>
+				<div class="field" id="field-f">
+					<label for="tab-f" style="opacity:.2; cursor:no-drop">Fichier</label>
+					<input disabled="disabled" form="form1" type="file" name="f" id="f" placeholder="Fichier">
+				</div>
+				<div class="field" id="field-u">
+					<label for="tab-u" style="opacity:.2; cursor:no-drop">Adresse</label>
+					<input disabled="disabled" type="url" name="u" id="u" placeholder="Adresse"/>
+				</div>
+				
+			</div>
+			<div class="options">
+				<div class="field" id="field-m">
+					<label for="m">Modes</label>
+					<input form="form1" placeholder="Séquence de modes" type="text" name="m" id="m" value="" />
+					<button id="btn_reverse" class="reverse" title="Inverser les données"></button>
+				</div>
+				<div>
+					<input type="submit" form="form1" value="&ddarr; Convertir &ddarr;">
+				</div>
+			</div>
+			<div class="output">
+				<div class="field" id="field-r">
+					<label for="r">Résultat de la conversion</label>
+					<textarea form="form1" id="r" cols="30" rows="5" readonly="readonly" placeholder="Résultat de la conversion"></textarea>
+				</div>
+			</div>
+			<form action="" method="post" enctype="multipart/form-data" id="form1">
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
