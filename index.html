@@ -2,23 +2,26 @@
 <html lang="fr">
 
 <head>
-	<title>Endecoder</title>
 	<meta charset="UTF-8" />
 	<link rel="stylesheet" href="./src/endecoder.css" />
 	<script type="module">
 		import App from "./src/App.js";
 	</script>
+	<title>EnDecoder &mdash;Encoder... Décoder... et vice versa</title>
 </head>
 
 <body>
 	<div class="interface">
-		<header>
-			<img src="images/favicon.svg" width="64" alt=""><h1>Endecoder</h1>
+		<header style="fill:var(--color-main);">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<use xlink:href="images/logo_endecoder.svg#logo_endecoder"/>
+			</svg>
+			<h1><span>En</span><span>De</span>coder</h1>
+			<p>Encoder... <br>Décoder... <br>et vice versa</p>
 		</header>
-		<footer>&copy; 2018</footer>
+		<footer><span>&copy; Martin Boudreau</span><span>EnDecoder</span></footer>
 		<div class="body">
 			<div class="instructions">
-				<p>Permet d'encoder et de décoder une chaîne de caractères.</p>
 				<table class="modes" border="1">
 					<caption>Modes</caption>
 					<thead>
@@ -37,6 +40,7 @@
 						<tr><td>C</td><td>c</td><th>majuscules</th></tr>
 						<tr><td>F</td><td>f</td><th>utf-8</th></tr>
 						<tr><td>5</td><td></td><th>md5</th></tr>
+						<tr><td>1</td><td></td><th>sha1</th></tr>
 					</tbody>
 				</table>
 				<h2>API</h2>

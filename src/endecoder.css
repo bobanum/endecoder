@@ -1,51 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Expletus+Sans:400,400i,500,500i,600,600i,700,700i&display=swap");
 html {
   height: 100%;
   font-size: 16px;
+  font-family: 'Expletus Sans', cursive;
 }
 
 body {
   height: 100%;
-  font-family: arial;
   margin: 0;
 }
 
 div.interface {
   --color-main: #036;
-  --color-light: hsl(210, 50%, 80%);
+  --color-light: #b3cce6;
   height: 100%;
   max-width: 960px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 div.interface > header {
-  -webkit-box-ordinal-group: -999;
-      -ms-flex-order: -1000;
-          order: -1000;
+  order: -1000;
 }
 
 div.interface > footer {
-  -webkit-box-ordinal-group: 1001;
-      -ms-flex-order: 1000;
-          order: 1000;
+  order: 1000;
 }
 
 div.interface > .body {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 0px;
-          flex: 1 0 0;
-  display: -ms-grid;
+  flex: 1 0 0;
   display: grid;
-  -ms-grid-rows: auto auto 1fr;
-      grid-template-rows: auto auto 1fr;
-  -ms-grid-columns: 1fr 300px;
-      grid-template-columns: 1fr 300px;
+  grid-template-rows: auto auto 1fr;
+  grid-template-columns: 1fr 300px;
   grid-gap: 1em;
   padding: 1em;
 }
@@ -54,57 +41,70 @@ div.interface > header,
 div.interface > footer {
   background-color: var(--color-light);
   color: var(--color-main);
-  padding: 1em;
+  padding: .25rem 2rem;
 }
 
 div.interface > header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: grid;
+  grid-template-columns: min-content auto max-content;
+  gap: 1rem;
+  align-items: center;
+}
+
+div.interface > header * {
+  margin: 0;
 }
 
 div.interface > header h1 {
+  font-size: 3.5em;
   margin: 0;
-  line-height: 0;
-  font-size: 3em;
+  line-height: 1;
+  letter-spacing: -.1ch;
+  padding-top: .1em;
 }
 
-div.interface > header img {
-  margin-right: 1em;
+div.interface > header h1 span:nth-child(2) {
+  color: darkred;
+}
+
+div.interface > header svg {
+  width: 5em;
+  height: 5em;
+}
+
+div.interface > header p {
+  font-style: italic;
+  text-align: left;
+  line-height: .9;
+  font-weight: 900;
+  color: white;
+  font-size: 1.3em;
+}
+
+div.interface footer {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
 }
 
 .options {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   background-color: #eee;
   padding: 0.25em;
 }
 
 .flex-center, .reverse {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
 .reverse {
   width: 24px;
   height: 24px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border: none;
   background-color: rgba(0, 0, 0, 0.2);
   border-radius: .25em;
@@ -116,8 +116,6 @@ div.interface > header img {
 
 div.instructions {
   font-size: smaller;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 4;
   grid-area: 1 / 2 / span 4 / auto;
 }
 
@@ -133,7 +131,6 @@ div.instructions h2 {
 }
 
 .input {
-  display: -ms-grid;
   display: grid;
   grid-gap: 0 .5em;
 }
@@ -153,7 +150,6 @@ div.instructions h2 {
 }
 
 .input label {
-  -ms-grid-row: 1;
   grid-row: 1;
   border: 1px solid black;
   padding: .25em .5em 0;
@@ -174,19 +170,12 @@ div.instructions h2 {
 }
 
 .output {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .output > * {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 table.modes {
@@ -220,23 +209,13 @@ table.modes tbody td {
 }
 
 div.field {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 div.field#field-m {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
 }
 
 div.field > label {
@@ -244,11 +223,7 @@ div.field > label {
 }
 
 div.field > textarea {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 0px;
-          flex: 1 0 0;
+  box-sizing: border-box;
+  flex: 1 0 0;
   resize: none;
 }
-/*# sourceMappingURL=endecoder.css.map */

@@ -1,0 +1,8 @@
+<svg width="128" height="116" version="1.1" viewBox="0 0 128 116" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs>
+	<symbol id="logo_endecoder" viewBox="0 0 128 116">
+		<path d="m46 0.99999c-11.562 0-22.175 3.0255-30.448 8.5406-8.2727 5.5152-14.552 14.184-14.552 24.459v71.537c12.983 6.068 28.429 9.4631 45 9.4631 21.504 0 41.117-5.7122 55.904-15.57 14.787-9.8583 25.096-24.527 25.096-41.43 0-16.903-10.308-31.572-25.096-41.43-14.787-9.8583-34.4-15.57-55.904-15.57zm0 18c18.261 0 34.648 5.0327 45.919 12.547 11.271 7.5143 17.081 16.846 17.081 26.453 0 9.6069-5.8093 18.938-17.081 26.453-11.271 7.5143-27.658 12.547-45.919 12.547-9.6904 0-18.85-1.4202-27-3.8738v-32.588c7.686 4.1906 16.986 6.4617 27 6.4617 11.562 0 22.175-3.0255 30.448-8.5406l-9.9844-14.977c-4.7567 3.1712-12.144 5.5176-20.464 5.5176-8.3198 0-15.707-2.347-20.464-5.5181-4.7567-3.1711-6.5363-6.5024-6.5363-9.4819 0-2.9794 1.7795-6.3112 6.5363-9.4824 4.7567-3.1712 12.144-5.5176 20.464-5.5176z" color="#000000" color-rendering="auto" dominant-baseline="auto" fill-rule="evenodd" image-rendering="auto" shape-rendering="auto" solid-color="#000000" style="font-feature-settings:normal;font-variant-alternates:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;font-variant-position:normal;isolation:auto;mix-blend-mode:normal;paint-order:markers fill stroke;shape-padding:0;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-orientation:mixed;text-transform:none;white-space:normal"/>
+	</symbol>
+	</defs>
+	<use xlink:href="#logo_endecoder"/>
+</svg>

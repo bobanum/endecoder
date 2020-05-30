@@ -49,9 +49,10 @@ class Endecoder {
 			case 'x': return pack('H*', $string);
 			case 'M': case 'C': return strtoupper($string);
 			case 'm': case 'c': return strtolower($string);
-			case '5': return md5($string);
 			case 'F': return utf8_encode($string);
 			case 'f': return utf8_decode($string);
+			case '5': return md5($string);
+			case '1': return sha1($string);
 			default: return $string;
 		}
 	}

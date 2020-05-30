@@ -31,7 +31,8 @@ export default class Endecoder {
 		var formData = new FormData(form);
 		this.api(formData).then(data => {
 			var r = document.getElementById('r');
-			r.textContent = data.responseText;
+			// r.textContent = data.responseText;
+			r.value = data.responseText;
 		});		
 		return false;
 	}
